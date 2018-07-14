@@ -1,0 +1,10 @@
+{% block form %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_errors(form) }}
+        {{ form_label(form) }}
+        {{ form_widget(form)}}
+    </div>
+    <button class="btn-xs btn-secondary" type="submit">S'inscrire</button>
+    {{ form_end(form) }}
+{% endblock %}

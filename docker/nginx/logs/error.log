@@ -1,0 +1,13 @@
+2018/06/26 21:36:32 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12
+2018/06/26 21:36:35 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12
+2018/06/26 21:36:37 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12
+2018/06/26 21:36:37 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12
+2018/06/26 21:36:39 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12
+2018/06/26 21:36:41 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12
+2018/06/26 21:36:45 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12
+2018/06/26 21:36:52 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12
+2018/06/26 21:37:05 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12
+2018/06/26 21:37:32 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12
+2018/06/26 21:38:26 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12
+2018/06/26 21:39:27 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12
+2018/06/26 21:40:27 [emerg] 1#1: host not found in upstream "php-fpm" in /etc/nginx/conf.d/behat.conf:12

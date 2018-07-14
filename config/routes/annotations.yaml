@@ -1,0 +1,3 @@
+controllers:
+    resource: ../../src/UI/Actions
+    type: annotation

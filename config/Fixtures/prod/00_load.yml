@@ -1,0 +1,3 @@
+App\Domain\Model\Article:
+    article{1..40}:
+        __construct: ['<word()>', '<sentence()>']
