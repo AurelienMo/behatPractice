@@ -17,6 +17,8 @@ use App\Application\Handlers\Interfaces\Forms\RegistrationUserHandlerInterface;
 use App\Domain\Builders\Interfaces\UserBuilderInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Form\FormInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
  * Class RegistrationUserHandler
@@ -29,6 +31,9 @@ class RegistrationUserHandler implements RegistrationUserHandlerInterface
     /** @var EntityManagerInterface */
     private $entityManager;
 
+    /** @var SessionInterface */
+    private $session;
+
     /**
      * RegistrationUserHandler constructor.
      *
@@ -36,11 +41,13 @@ class RegistrationUserHandler implements RegistrationUserHandlerInterface
      * @param EntityManagerInterface $entityManager
      */
     public function __construct(
-        UserBuilderInterface $userBuilder, EntityManagerInterface $entityManager
+        UserBuilderInterface $userBuilder, EntityManagerInterface $entityManager,
+        SessionInterface $session
     )
     {
         $this->userBuilder = $userBuilder;
         $this->entityManager = $entityManager;
+        $this->session = $session;
     }
 
     /**
@@ -54,8 +61,11 @@ class RegistrationUserHandler implements RegistrationUserHandlerInterface
             $user = ($this->userBuilder->create($form->getData()))
                                        ->getUser();
 
+
             $this->entityManager->persist($user);
             $this->entityManager->flush();
+
+            $this->session->getFlashbag()->add('success', 'Votre inscription a été prise en compte.');
 
             return true;
         }

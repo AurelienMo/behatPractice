@@ -1,6 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% for message in app.session.flashbag.get('error') %}
+        <div class="alert alert-error alert-bold-border square fade in alert-dismissible col-xs-12">
+            <i class="fa fa-check"></i>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.session.flashbag.get('success') %}
+        <div class="alert alert-success alert-bold-border square fade in alert-dismissible col-xs-12">
+            <i class="fa fa-check"></i>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.session.flashbag.get('info') %}
+        <div class="alert alert-info alert-bold-border square fade in alert-dismissible col-xs-12">
+            <i class="fa fa-check"></i>
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
 {% form_theme form 'theme/security/registration.html.twig' %}
 {{ form(form) }}
 {% endblock %}
