@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Model;
 
+use App\Application\Helpers\Common\SlugifyHelper;
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -63,6 +64,15 @@ class Article
     private $createdAt;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     *
+     * @Groups({"show"})
+     */
+    private $slug;
+
+    /**
      * Article constructor.
      *
      * @param string $title
@@ -75,6 +85,7 @@ class Article
         $this->title = $title;
         $this->content = $content;
         $this->createdAt = new \DateTime();
+        $this->slug = SlugifyHelper::slugify($title);
     }
 
     /**
@@ -107,5 +118,13 @@ class Article
     public function getCreatedAt(): \DateTime
     {
         return $this->createdAt;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug(): string
+    {
+        return $this->slug;
     }
 }

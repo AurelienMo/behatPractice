@@ -55,7 +55,7 @@ class GetArticleAction implements GetArticleActionInterface
 
 
     /**
-     * @Route("/api/articles/{id}", name="get_article", methods={"GET"})
+     * @Route("/api/articles/{slug}", name="get_article", methods={"GET"})
      *
      * @param Request $request
      *

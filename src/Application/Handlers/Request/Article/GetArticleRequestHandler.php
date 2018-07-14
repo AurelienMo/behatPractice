@@ -49,7 +49,7 @@ class GetArticleRequestHandler implements GetArticleRequestHandlerInterface
     public function handle(Request $request)
     {
         $article = $this->entityManager->getRepository(Article::class)
-                                       ->getArticleById($request->attributes->get('id'));
+                                       ->getArticleBySlug($request->attributes->get('slug'));
 
         if (!$article) {
             throw new WebserviceHttpException(

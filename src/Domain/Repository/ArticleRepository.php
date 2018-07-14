@@ -22,17 +22,17 @@ use Doctrine\ORM\NonUniqueResultException;
 class ArticleRepository extends EntityRepository
 {
     /**
-     * @param string $id
+     * @param string $slug
      *
      * @return mixed
      *
      * @throws NonUniqueResultException
      */
-    public function getArticleById(string $id)
+    public function getArticleBySlug(string $slug)
     {
         return $this->createQueryBuilder('a')
-                   ->where('a.id = :id')
-                   ->setParameter('id', $id)
+                   ->where('a.slug = :slug')
+                   ->setParameter('slug', $slug)
                    ->setCacheable(true)
                    ->getQuery()
                    ->getOneOrNullResult();
