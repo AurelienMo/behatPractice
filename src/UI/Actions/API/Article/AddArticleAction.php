@@ -60,7 +60,7 @@ class AddArticleAction implements AddArticleActionInterface
     }
 
     /**
-     * @Route("/api/articles", name="add_article", methods={"POST"})
+     * @Route("/api/secured/articles", name="add_article", methods={"POST"})
      *
      * {@inheritdoc}
      */
