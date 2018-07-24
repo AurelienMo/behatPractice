@@ -29,8 +29,11 @@ interface AddArticleResponderInterface
     public function __construct(
         UrlGeneratorInterface $generator
     );
+    
     /**
+     * @param string $articleSlug
+     *
      * @return Response
      */
-    public function response(string $articleId): Response;
+    public function response(string $articleSlug): Response;
 }

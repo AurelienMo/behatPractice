@@ -72,6 +72,6 @@ class AddArticleAction implements AddArticleActionInterface
         $this->entityManager->persist($article->getArticle());
         $this->entityManager->flush();
 
-        return $this->responder->response($article->getArticle()->getId()->toString());
+        return $this->responder->response($article->getArticle()->getSlug());
     }
 }

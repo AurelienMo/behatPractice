@@ -24,6 +24,7 @@ class AddArticleResponder implements AddArticleResponderInterface
 {
     /** @var UrlGeneratorInterface */
     private $generator;
+    
     /**
      * {@inheritdoc}
      */
@@ -32,19 +33,19 @@ class AddArticleResponder implements AddArticleResponderInterface
     ) {
         $this->generator = $generator;
     }
-
+    
     /**
-     * @param string $articleId
+     * @param string $articleSlug
      *
      * @return Response
      */
-    public function response(string $articleId): Response
+    public function response(string $articleSlug): Response
     {
         return new Response(
             '',
             Response::HTTP_CREATED,
             [
-                'Location' => $this->generator->generate('get_article', ['id' => $articleId])
+                'Location' => $this->generator->generate('get_article', ['slug' => $articleSlug]),
             ]
         );
     }
