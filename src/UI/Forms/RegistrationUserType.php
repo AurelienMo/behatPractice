@@ -39,7 +39,7 @@ class RegistrationUserType extends AbstractType
                 'username',
                 TextType::class,
                 [
-                    'label' => 'Nom d\'utiilisateur souhaité',
+                    'label' => 'Nom d\'utilisateur souhaité',
                     'required' => false,
                 ]
             )
